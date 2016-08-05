@@ -1,8 +1,7 @@
-﻿using System;
+﻿using System.Automation.Interop;
 using System.Diagnostics;
-using Saltwort.Interop;
 
-namespace Saltwort.System
+namespace System.Automation.OperatingSystem
 {
     public class Info
     {
@@ -50,13 +49,13 @@ namespace Saltwort.System
 
         public static bool IsXPOrHigher()
         {
-            OperatingSystem os = Environment.OSVersion;
+            System.OperatingSystem os = Environment.OSVersion;
             return (os.Platform == PlatformID.Win32NT) && ((os.Version.Major > 5) || ((os.Version.Major == 5) && (os.Version.Minor >= 1)));
         }
 
         static bool IsWinVistaOrHigher()
         {
-            OperatingSystem os = Environment.OSVersion;
+            System.OperatingSystem os = Environment.OSVersion;
             return (os.Platform == PlatformID.Win32NT) && (os.Version.Major >= 6);
         }
 

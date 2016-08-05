@@ -1,11 +1,10 @@
 ﻿using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Saltwort.ConfigFile
+namespace System.Automation.ConfigFile
 {
-    public class INI
+    public class IniFile
     {
         readonly string _path;
 
@@ -15,7 +14,7 @@ namespace Saltwort.ConfigFile
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         static extern int GetPrivateProfileString(string section, string key, string Default, StringBuilder retVal, int size, string filePath);
 
-        public INI(string iniPath)
+        public IniFile(string iniPath)
         {
             _path = new FileInfo(iniPath).FullName;
         }
